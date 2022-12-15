@@ -1,105 +1,45 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script>
-      function agregarfila() {
-        var tabl1 = document.getElementById("headtable")
-        var tabl1body = tabl1.getElementsByTagName("tbody")
+<link rel="stylesheet" href="style.css" />
+<script src="main.js" defer></script>
 
-        var hilera = document.createElement("tr")
-        var celda = document.createElement("td")
-        var textoCelda = document.createTextNode("celda")
+<div class="container">
+  <table class="table" id="headtable">
+    <thead>
+      <tr>
+        <th>MATRICULA</th>
+        <th>MATERIAL SOLICITADO</th>
+        <th>SE HA RESPETADO EL PLAZO MÁXIMO DE 72H</th>
+        <th>MATRICULA CORRESPONDIENTE AL PEDIDO</th>
+        <th>MANIPULADOR CORRECTO</th>
+        <th>NOMBRE FABRICANTE</th>
+        <th>TIENE HOMOLOGACIÓN</th>
+        <th>TIENE ESCUDOS ESPAÑOLES</th>
+        <th>LA PLACA NO ESTÁ RALLADA?</th>
+        <th>DISEÑO CORRECTO SEGÚN EL PEDIDO</th>
+        <th>LOS REMACHES SON DEL COLOR CORRECTO</th>
+        <th>PERSONA QUE REALIZA LA PLACA</th>
+        <th>ALUMINIO / ACRÍLICA</th>
+        <th>TIPO DE PLACA</th>
+        <th>REPETIR</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <div class="form-group">
+    <!-- Button  -->
+    <button type="button" class="btn primary" onclick="agregarFila()">
+      Añadir nueva fila
+    </button>
+    <button type="button" class="btn secondary" onclick="eliminarFila()">
+      Eliminar Fila
+    </button>
 
-        celda.appendChild(textoCelda)
-        hilera.appendChild(celda)
-        tabl1body.appendChild(hilera)
-        tabl1.appendChild(tabl1body)
-      }
-
-      const agregarFila = () => {
-        document.getElementById("headtable").insertRow(-1).innerHTML =
-          '<td> <input type="text"> </td><td> <input class="check" type="checkbox"> </td><td> <input class="check" type="checkbox"> </td><td> <input class="check" type="checkbox"> </td><td> <input class="check" type="checkbox"> </td><td> <input class="check" type="checkbox"> </td><td> <input class="check" type="checkbox"> </td><td> <input class="check" type="checkbox"> </td><td> <input class="check" type="checkbox"> </td><td> <input class="check" type="checkbox"> </td><td> <input class="check" type="checkbox"> </td><td> </td><td></td><td></td><td></td>'
-        /* MATRICULA                        MATERIAL SOLICITADO                            SE HA RESPETADO EL PLAZO                       CORRESPONDIENTE AL PEDIDO                           MANIPULADOR CORRECTO                           NOMBRE FABRICANTE                               TIENE HOMOLGACION                                TIENE ESCUDOS                                  PLACA RALLADA                                  DISEÑO CORRECTO                                  REMACHES CORRECTOS */
-      }
-
-      const eliminarFila = () => {
-        const table = document.getElementById("headtable")
-        const rowCount = table.rows.length
-
-        if (rowCount <= 1) alert("No se puede eliminar encabezado")
-        else table.deleteRow(rowCount - 1)
-      }
-    </script>
-
-    <style>
-      .container {
-        width: 100%;
-        background-color: bisque;
-      }
-      .table {
-        font-size: 10px;
-        color: red;
-      }
-
-      th {
-        border: 3px solid blue;
-        background-color: black;
-      }
-
-      td {
-        height: 10px;
-        border: 3px solid black;
-      }
-
-      .check {
-        margin-left: 43%;
-        margin-top: 5px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <table class="table" id="headtable">
-        <thead>
-          <tr>
-            <th>MATRICULA</th>
-            <th>MATERIAL SOLICITADO</th>
-            <th>SE HA RESPETADO EL PLAZO MÁXIMO DE 72H</th>
-            <th>MATRICULA CORRESPONDIENTE AL PEDIDO</th>
-            <th>MANIPULADOR CORRECTO</th>
-            <th>NOMBRE FABRICANTE</th>
-            <th>TIENE HOMOLOGACIÓN</th>
-            <th>TIENE ESCUDOS ESPAÑOLES</th>
-            <th>LA PLACA NO ESTÁ RALLADA?</th>
-            <th>DISEÑO CORRECTO SEGÚN EL PEDIDO</th>
-            <th>LOS REMACHES SON DEL COLOR CORRECTO</th>
-            <th>PERSONA QUE REALIZA LA PLACA</th>
-            <th>ALUMINIO / ACRÍLICA</th>
-            <th>TIPO DE PLACA</th>
-            <th>REPETIR</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-      <div class="form-group">
-        <!-- Button  -->
-        <button type="button" class="btn primary" onclick="agregarFila()">
-          Añadir nueva fila
-        </button>
-        <button type="button" class="btn secondary" onclick="eliminarFila()">
-          Eliminar Fila
-        </button>
-
-        <form name="form1" id="form1" action="/action_page.php">
-          <select name="subject" id="subject">
-            <option value="" selected="selected">John</option>
-            <option value="" selected="selected">Bruno</option>
-            <option value="" selected="selected">Eduard</option>
-            <option value="" selected="selected">Efka</option>
-          </select>
-        </form>
-      </div>
-    </div>
-  </body>
-</html>
+    <form name="form1" id="form1" action="/action_page.php">
+      <select name="subject" id="subject">
+        <option value="" selected="selected">John</option>
+        <option value="" selected="selected">Bruno</option>
+        <option value="" selected="selected">Eduard</option>
+        <option value="" selected="selected">Efka</option>
+      </select>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+.container {
+  width: 100%;
+  background-color: bisque;
+}
+.table {
+  font-size: 10px;
+  color: red;
+}
+
+th {
+  border: 3px solid blue;
+  background-color: black;
+}
+
+td {
+  height: 10px;
+  border: 3px solid black;
+}
+
+.check {
+  margin-left: 43%;
+  margin-top: 5px;
+}
