@@ -12,51 +12,51 @@ const addRow = () => {
     </td>
 
     <td>
-      <input type="text">
+      <input name="matricula" type="text">
     </td>
     
     <td>
-      <input class="check" type="checkbox">
+      <input name="material solicitado" class="check" type="checkbox">
     </td>
     
     <td>
-      <input class="check" type="checkbox">
+      <input name="RESPETADO PLAZO MÁXIMO DE 72H" class="check" type="checkbox">
     </td>
     
     <td>
-      <input class="check" type="checkbox">
+      <input name="MATRICULA CORRESPONDIENTE AL PEDIDO" class="check" type="checkbox">
     </td>
     
     <td>
-      <input class="check" type="checkbox">
+      <input name="MANIPULADOR CORRECTO?" class="check" type="checkbox">
     </td>
     
     <td>
-      <input class="check" type="checkbox">
+      <input name="NOMBRE FABRICANTE" class="check" type="checkbox">
     </td>
     
     <td>
-      <input class="check" type="checkbox">
+      <input name="TIENE HOMOLOGACIÓN?" class="check" type="checkbox">
     </td>
     
     <td>
-      <input class="check" type="checkbox">
+      <input name="TIENE ESCUDOS ESPAÑOLES?" class="check" type="checkbox">
     </td>
     
     <td>
-      <input class="check" type="checkbox">
+      <input name="PLACA RALLADA?" class="check" type="checkbox">
     </td>
     
     <td>
-      <input class="check" type="checkbox">
+      <input name="DISEÑO CORRECTO SEGÚN EL PEDIDO" class="check" type="checkbox">
     </td>
     
     <td>
-      <input class="check" type="checkbox">
+      <input name="LOS REMACHES SON DEL COLOR CORRECTO" class="check" type="checkbox">
     </td>
     
     <td>
-      <select>
+      <select name="PERSONA QUE REALIZA LA PLACA">
         <option value="John">John</option>
         <option value="Bruno">Bruno</option>
         <option value="Eduard">Eduard</option>
@@ -77,7 +77,7 @@ const addRow = () => {
     </td>
     
     <td>
-      <select>
+      <select name="tipo de placa">
         <option value="Coche">Coche</option>
         <option value="Moto">Moto</option>
         <option value="etc">etc</option>
@@ -85,7 +85,7 @@ const addRow = () => {
     </td>
     
     <td>
-      <input class="check" type="checkbox">
+      <input name="repetir" class="check" type="checkbox">
     </td>
   `
   tableBody.appendChild(tr)
@@ -98,5 +98,26 @@ const addRow = () => {
 }
 
 const exportToJSON = () => {
-  console.log(tableBody);
+  const rows = tableBody.querySelectorAll('tr')
+
+  if (rows.length === 0) return
+
+  const plates = []
+
+  rows.forEach(row => {
+    const inputs = row.querySelectorAll('input')
+    const object = {}
+
+    inputs.forEach(input => {
+      if (input.type === 'checkbox') {
+        object[input.name] = input.checked
+      } else {
+        object[input.name] = input.value
+      }
+    })
+
+    plates.push(object)
+  })
+
+  console.log(plates);
 }
