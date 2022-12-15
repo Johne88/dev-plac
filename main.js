@@ -106,6 +106,8 @@ const exportToJSON = () => {
 
   rows.forEach(row => {
     const inputs = row.querySelectorAll('input')
+    const selects = row.querySelectorAll('select')
+
     const object = {}
 
     inputs.forEach(input => {
@@ -114,6 +116,10 @@ const exportToJSON = () => {
       } else {
         object[input.name] = input.value
       }
+    })
+
+    selects.forEach(select => {
+      object[select.name] = select.value
     })
 
     plates.push(object)
