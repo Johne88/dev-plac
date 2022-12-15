@@ -2,18 +2,23 @@
 <script src="main.js" defer></script>
 
 <div class="container">
-  <table class="table" id="headtable">
+  <table class="table" id="myTable">
     <thead>
       <tr>
-        <th>MATRICULA</th>
+        <th>
+          <button class="btn primary" onclick="addRow()">
+            ➕
+          </button>
+        </th>
+        <th>MATRÍCULA</th>
         <th>MATERIAL SOLICITADO</th>
-        <th>SE HA RESPETADO EL PLAZO MÁXIMO DE 72H</th>
+        <th>RESPETADO PLAZO MÁXIMO DE 72H</th>
         <th>MATRICULA CORRESPONDIENTE AL PEDIDO</th>
-        <th>MANIPULADOR CORRECTO</th>
+        <th>MANIPULADOR CORRECTO?</th>
         <th>NOMBRE FABRICANTE</th>
-        <th>TIENE HOMOLOGACIÓN</th>
-        <th>TIENE ESCUDOS ESPAÑOLES</th>
-        <th>LA PLACA NO ESTÁ RALLADA?</th>
+        <th>TIENE HOMOLOGACIÓN?</th>
+        <th>TIENE ESCUDOS ESPAÑOLES?</th>
+        <th>PLACA RALLADA?</th>
         <th>DISEÑO CORRECTO SEGÚN EL PEDIDO</th>
         <th>LOS REMACHES SON DEL COLOR CORRECTO</th>
         <th>PERSONA QUE REALIZA LA PLACA</th>
@@ -24,22 +29,6 @@
     </thead>
     <tbody></tbody>
   </table>
-  <div class="form-group">
-    <!-- Button  -->
-    <button type="button" class="btn primary" onclick="agregarFila()">
-      Añadir nueva fila
-    </button>
-    <button type="button" class="btn secondary" onclick="eliminarFila()">
-      Eliminar Fila
-    </button>
 
-    <form name="form1" id="form1" action="/action_page.php">
-      <select name="subject" id="subject">
-        <option value="" selected="selected">John</option>
-        <option value="" selected="selected">Bruno</option>
-        <option value="" selected="selected">Eduard</option>
-        <option value="" selected="selected">Efka</option>
-      </select>
-    </form>
-  </div>
+  <button onclick="exportToJSON()">Exportar</button>
 </div>
