@@ -6,7 +6,10 @@
     <thead>
       <tr>
         <th>
-          <button class="btn primary" onclick="addRow()">
+          <button
+            class="btn primary"
+            onclick="addEmptyRow()"
+          >
             ➕
           </button>
         </th>
@@ -30,5 +33,15 @@
     <tbody></tbody>
   </table>
 
-  <button onclick="exportToJSON()">Exportar</button>
+  <button onclick="exportJSON()">Exportar</button>
+
+  <br />
+
+  Importar
+
+  <input
+    id="importFileInput"
+    type="file"
+    accept="application/json"
+  />
 </div>
