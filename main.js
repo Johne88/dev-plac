@@ -92,6 +92,7 @@ const addEmptyRow = () => {
       <input name="repetir" class="check" type="checkbox">
     </td>
   `
+
   tableBody.appendChild(tr)
 
   tableBody.querySelectorAll('button').forEach(button => {
@@ -194,6 +195,7 @@ const addFilledRow = item => {
       <input name="repetir" class="check" type="checkbox" ${item.repetir ? 'checked' : ''}>
     </td>
   `
+
   tableBody.appendChild(tr)
 
   tableBody.querySelectorAll('button').forEach(button => {
@@ -235,8 +237,10 @@ const exportJSON = () => {
   })
 
   const a = document.createElement('a')
+
   a.href = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(plates))
   a.download = 'export.json'
+
   a.click()
 }
 
